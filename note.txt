@@ -1,0 +1,15 @@
+article ideas:
+streaming data machine learning
+recommendation system
+MLOps system
+NLP
+
+data:
+ecommerce
+digital advertising
+
+ML Frameworks:
+Pytorch
+Airflow
+NoSQL
+
