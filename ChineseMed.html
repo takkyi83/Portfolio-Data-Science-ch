@@ -7,8 +7,8 @@
 </head>
 <body>
 <div class="container">
-    <h1>Decrypt Compendium of Materia Medica: Ancient Chinese unstructured text exploration , medicinal material
-        , database construction and visual exploration analysis</h1>
+    <h1>本草綱目解密: 古籍文本探勘、藥材資料庫建置與視覺化探索分析研究
+    </h1>
     <div class="content">
         <div class="image-container">
             <img src="本草海報.jpeg" class="header-image centered-image" alt="Header Image", width="400" height="2000">
@@ -150,13 +150,13 @@
     <br>
         <strong>使用Entity–relationship model呈現</strong><br>
         <img src="er-model.png", alt="database er model"><br>
-        <strong>資料表關聯圖</strong>
+        <strong>資料表關聯圖</strong><br>
         <img src="db-diagram.png" alt="database relationship diagram"><br>
     </p>
     <p>
     <h2>資料分析</h2>
     <ul>
-        <strong>1. 隱含狄利克雷分配（Latent Dirichlet Allocation，LDA)</strong><br>
+        <h3>1. 隱含狄利克雷分配（Latent Dirichlet Allocation，LDA)</h3><br>
         <p>
         LDA是一種非監督機器學習技術，可以用來識別大規模文檔集（document collection）或語料庫（corpus）中潛藏的主題信息。
         它採用了詞袋（bag of words）的方法，這種方法將每一篇文檔視為一個詞頻向量，從而將文本資訊轉化為了易於建模的數字信息。但是詞袋方法沒有考慮詞與詞之間的順序，這簡化了問題的複雜性，同時也為模型的改進提供了契機。每一篇文檔代表了一些主題所構成的一個機率分佈，而每一個主題又代表了很多單詞所構成的一個機率分佈。
@@ -167,7 +167,7 @@
         本研究利用LDA分群分法，萃取病症名稱之特徵，且分成2至45群，目前最多分到45組，並請教相關領域的專家，發現分至45組的結果最為容易解釋，且可以嘗試分45群以上並觀察其結果。
         </p>
     </ul>
-    <ul><strong>2. Apriori藥物關聯性結果解讀</strong><br></ul>
+    <ul><h3>2. Apriori藥物關聯性結果解讀</h3><br></ul>
         <p>
         在中藥當中講究的是七情配伍，因為中藥配伍也是有很多禁忌的，兩種中藥放在一起的相互作用是不一樣的，有些可能相排斥，有些可能會增強藥效，還有些可能會直接的變成毒藥。七情配伍的內容是：
             <li>
@@ -196,12 +196,12 @@
             相反：即兩種藥物合用能產生毒性反應或副作用。例如甘遂和甘草，生甘遂作用較強，毒性也較大，煨甘遂瀉下作用較弱，毒性也較小，用醋炙後，可減緩其瀉下作用和降低其毒性。本品反甘草，與甘草同用則毒性增強。
         </li>
 
-    <ul><strong>3. Word2Vec</strong></ul><br>
+    <ul><h3>3. Word2vec與藥物關聯性</h3></ul><br>
     <p>
-        Word2Vec converts words into computer-understandable patterns known as vectors. It utilizes the Continuous Bag of Words (CBOW) algorithm, which takes the surrounding context words as input for a neural network and predicts the target word. Once the computer learns, we can extract word vectors for any two words and calculate the distance between them. This distance concept represents the similarity between words.
+        把詞（word）轉換成電腦可以了解的模式（vector）。它使用Continuous Bag Of Words（CBOW）演算法，利用上下文的詞來當作神經網路的輸入，最後預測這個目標的詞是什麼。電腦學習完成後我們可以任意抽出兩個詞，並得到他的詞向量，計算他們之間的距離。這個距離的概念代表了詞之間的相似性。
     </p>
     <p>
-        The interpretability of Word2Vec's association results is not as straightforward as Apriori's results. In this study, probably because the text were written in ancient Chinese or Word2Vec is less capable in understanding the contextual relationships than Apriori, the calculated result shows a similarity of only about 0.2, indicating a weak association. Therefore, relying on contextual analysis to determine the strength of associations between medicinal herbs may not be an effective approach.
+        Word2Vec的關聯性結果不像Apriori的結果容易解釋。由於本研究《本草綱目》的文字記載屬於文言文或者是依據上下文的關係效果不如Apriori方法，計算出來結果只有0.2左右，並不是很相似，用前後文判斷中草藥間的關聯強度似乎不是好的做法。
     </p>
 
     <h2>資料視覺化</h2><br>
