@@ -28,6 +28,14 @@ body {
     align: "center";
 }
 
+.language-link {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    text-decoration: underline
+}
+
 table {
     border-collapse: collapse;
 }
