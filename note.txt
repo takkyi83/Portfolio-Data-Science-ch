@@ -3,6 +3,8 @@ streaming data machine learning
 recommendation system
 MLOps system
 NLP
+CTR Prediction
+http://surl.li/jcmih
 
 data:
 ecommerce

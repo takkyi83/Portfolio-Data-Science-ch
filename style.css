@@ -10,13 +10,52 @@ body {
     padding: 0 20%;
 }
 
+
 .header-image {
     max-width: 100%;
     height: auto;
+    flex-shrink: 0;
+    margin-bottom: 20px; /* Add a margin at the bottom to create space for the text */
 }
 
+.content {
+    flex-grow: 1;
+    padding: 0 20px;
+}
 
 .div {
     width: 300px;
-    align: "center"
+    align: "center";
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Change height to min-height to allow for content expansion */
+}
+
+.centered-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* 使用媒體查詢適應不同螢幕寬度 */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .content {
+        padding: 20px;
+    }
 }

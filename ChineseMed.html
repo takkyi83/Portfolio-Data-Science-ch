@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <title>Project Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Decrypt Compendium of Materia Medica: Ancient Chinese unstructured text exploration , medicinal material
+        , database construction and visual exploration analysis</h1>
+    <div class="content">
+        <div class="image-container">
+            <img src="本草海報.jpeg" class="header-image centered-image" alt="Header Image", width="400" height="2000">
+        </div>
+    </div>
+    <h2>背景與動機</h2>
+    <p>
+        中藥學自古以來據說已經有了上千年的歷史，相傳神農氏嘗百草的故事如經已不可考，但是不可否認的是中藥學的確是建立在古人不斷嘗試各種動植物甚至是礦物的結果記錄下來的智慧；其來源又以植物性藥材居多，使用的也最為普遍。儘管中藥學的歷史淵遠流長，可是綜觀整個近代醫學史上還是以西醫西藥為大宗其中原因除了西藥多半可以立即見效之外，西藥更有系統更有科學的方法來做紀錄以及驗證，而中藥抓藥的時候根據不同病症有著不同藥方甚至同種藥方在不同藥師抓得藥也不見相同，相較之下中藥學普遍給外界一種不可靠的歧見。隨著時代變化科技的進步資訊傳遞得更加快速與廣泛，在西方科學方法引入之後，中醫的大夫養成也從學徒制度，整個中醫學轉趨於專業化、學術化、國際化。再加上現在使用資訊的技術更加成熟，以這些技術來處理尚未結構化的中藥資料勢必能夠推動中藥學的現代化。
+    </p>
+
+    <p>
+    <h2> 目的</h2>
+    本項目以單一古籍文本作建置分析。而本研究最主要的目的如下：<br>
+    <ul>
+    1. 建立中藥關聯資料庫讓無結構的古籍文本化為方便分析的結構化資料
+    </ul>
+    <ul>
+    2. 以演算法和機器學習的角度來探討本草綱目藥材、病症、處方之間的關聯和群集關係
+    </ul>
+    <ul>
+    3. 將研究成果和大眾對中藥的使用方式比較異同處
+    </ul>
+    藉由上述目的，得出的研究成果可以提供對中藥材配藥抱持著疑問或是有興趣的非專業相關人士以及醫療機構一定程度的上的實驗驗證跟資料查詢，最後當所有資料建置完成可形成一個中藥學的大數據平台。
+    </p>
+
+    <h2>研究方法</h2>
+    本篇研究的資料來源為《本草綱目》全文，共分為16部、載藥共有1892種、方劑總共有11096首。而使用工具則為Python、MySQL、Tableau、Flask
+    <br>
+    <img src="本草-項目流程圖.jpg", alt="Research Method Flow Chart">
+
+    <p>
+        本研究開始先資料清理，運用Python使用正規表示式，做資料擷取。接著，再把資料預處理好的資料，使用MySQL建立中藥資料庫。利用LDA分群分析與Apriori關聯分析做資料分析，再利用Tableau軟體做中藥庫的視覺化探索分析，未來可提供為中藥大數據平台查詢。
+    </p>
+
+    <h2>資料清理</h2>
+    <p>
+        本草綱目屬於非結構化文字資料。文字資料通常是由表示單詞、句子，或者段落的文字流組成。由於文字資料非結構化（並不是整齊的格式化的資料表格）的特徵和充滿噪聲的本質，很難直接將機器學習方法應用在原始文字資料中。我們透過尋找內容規則以及利用 Regular Expression 擷取資料，將非結構化文字資料轉化成結構化文字資料。
+    </p>
+    <h3>非結構化資料常見問題</h3>
+    <ul>
+        <li>1. 資料缺漏</li>
+        <img src="unstructured-text-issues.jpg", alt="unstructured text issues">
+        <li>2. 格式不正確</li>
+        <img src="hard-to-see-patterns.jpg", alt="Hard to see patterns">
+    </ul>
+    </p>
+
+    <p>
+    <h3>資料結構化</h3>
+    <ul>
+    <p>
+        <li>
+            1. 將目錄、標題、內文轉成結構化格式<br>
+            <img src="data-structuring.png", alt="data structuring"> <br>
+            閱讀文本後發現目錄、標題、內文有遵循以下規則
+            <table>
+                <tr>
+                    <th>項目</th>
+                    <th>規則</th>
+                </tr>
+                <tr>
+                    <td>目錄</td>
+                    <td>下一行為空行</td>
+                </tr>
+                <tr>
+                    <td>標題</td>
+                    <td>下一行為縮排內容</td>
+                </tr>
+                <tr>
+                    <td>內文</td>
+                    <td>縮排內容</td>
+                </tr>
+            </table> <br>
+
+            使用Regular Expression將目錄、標題、內文擷取出來<br>
+            <img src="extract-content.png", alt="extract content"> <br>
+            將目錄、標題、內文轉成結構化格式<br>
+            <img src="convert-to-structured-format.png", alt="convert to structured format"><br>
+        </li>
+    </p>
+    <p>
+        <li>
+            2. 將別名、性味、主治、附方、部位轉成格式化格式<br>
+            文本內容：<br>
+            <img src="convert-aliases.png", alt="convert aliases"> <br>
+            使用Regular Expression將別名、性味、主治、附方、部位擷取出來
+            <br>
+            <img src="regex-extract-aliases.png", alt="use regex to extract aliases"> <br>
+            將別名、性味、主治、附方、部位轉成結構化格式<br>
+            <img src="format-aliases.png", alt="format aliases"><br>
+        </li>
+    </p>
+    <p>
+        <li>
+            3. 將性味的程度轉成結構化格式<br>
+            文本內容：<br>
+            <img src="taste-text.png", alt="taste levels">
+            評分 (按強弱程度給予0~3分)<br>
+            <table>
+                <tr>
+                    <th>屬性</th>
+                    <th>分數</th>
+                </tr>
+                <tr>
+                    <td>微冷</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>冷</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>大冷</td>
+                    <td>3</td>
+                </tr>
+            </table>
+            <br>
+            使用Regular Expression將性味的程度擷取出來<br>
+            <img src="extract-taste-levels.png", alt="extract taste levels"> <br>
+            將別名、性味、主治、附方、部位轉成結構化格式<br>
+            <img src="format-levels.png", alt="format levels"> <br>
+        </li>
+    </p>
+    <p>
+        <li>
+            4. 將附方轉成結構化格式<br>
+            文本內容：<br>
+            <img src="format-prescription.png", alt="prescription formatting" width=700 height="300"><br>
+            使用Regular Expression將附方名稱和附方描述擷取出來<br>
+            <img src="prescription-regex.png", alt="prescription regex"><br>
+            將附方名稱和附方描述轉成結構化格式<br>
+            <img src="compound-formatted.png", alt="compound formatted text">
+        </li>
+    </p>
+    </ul>
+    <p>
+        <h2>建立關聯資料庫</h2>
+    資料庫包含數個中藥以及病症資料表。將結構化後的文本建立關聯資料庫以便於之後的分析。
+    <br>
+        <strong>使用Entity–relationship model呈現</strong><br>
+        <img src="er-model.png", alt="database er model"><br>
+        <strong>資料表關聯圖</strong>
+        <img src="db-diagram.png" alt="database relationship diagram"><br>
+    </p>
+    <p>
+    <h2>資料分析</h2>
+    <ul>
+        <strong>1. 隱含狄利克雷分配（Latent Dirichlet Allocation，LDA)</strong><br>
+        <p>
+        LDA是一種非監督機器學習技術，可以用來識別大規模文檔集（document collection）或語料庫（corpus）中潛藏的主題信息。
+        它採用了詞袋（bag of words）的方法，這種方法將每一篇文檔視為一個詞頻向量，從而將文本資訊轉化為了易於建模的數字信息。但是詞袋方法沒有考慮詞與詞之間的順序，這簡化了問題的複雜性，同時也為模型的改進提供了契機。每一篇文檔代表了一些主題所構成的一個機率分佈，而每一個主題又代表了很多單詞所構成的一個機率分佈。
+        </p>
+        <img src="lda.png" alt="lda"><br>
+        <p>
+        <Strong>Use LDA to cluster diseases</Strong><br>
+        本研究利用LDA分群分法，萃取病症名稱之特徵，且分成2至45群，目前最多分到45組，並請教相關領域的專家，發現分至45組的結果最為容易解釋，且可以嘗試分45群以上並觀察其結果。
+        </p>
+    </ul>
+    <ul><strong>2. Apriori藥物關聯性結果解讀</strong><br></ul>
+        <p>
+        在中藥當中講究的是七情配伍，因為中藥配伍也是有很多禁忌的，兩種中藥放在一起的相互作用是不一樣的，有些可能相排斥，有些可能會增強藥效，還有些可能會直接的變成毒藥。七情配伍的內容是：
+            <li>
+                單行：即單味藥即能發揮預期效果，不需其他藥輔助的稱為單行。
+            </li>
+            <li>
+                相須：即性能功效相類似的藥物配合應用，可以增強其原有療效。例如:
+            </li>
+        分析結果中的知母和沙參同為清熱的藥、茯苓與澤瀉是臨床上極為常用的利水滲濕藥對。茯苓甘淡而平，淡滲利濕，且能補脾益心。
+        </p>
+        <br>
+        <img src="apriori1.png" alt="apriori1"><br>
+        <li>
+            相使：即在性能和功效方面有某種共性的藥物配合使用，而以一種藥物為主，另一種藥物為輔，能提高主藥物的療效。例如:補氣利水的黃芪與利水健脾的茯苓合用，茯苓能增強黃芪補氣利水的治療效果。另外還有天門冬與生地黃 ，茯苓與人參也是此類藥對。
+        </li>
+        <li>
+            相畏：即一種藥物的毒性反應或副作用，能被另一種藥物減輕或消除。例如厚樸溫中湯的藥方包括厚樸和乾薑。乾薑辛熱，助厚樸之溫裡寒。
+        </li>
+        <li>
+            相殺：即一種藥物能減輕或消除另一種藥物的毒性或副作用。如生薑能減輕或消除生半夏的毒副作用，故云生薑殺生半夏的毒。從上可知相畏、相殺實際上是同一配伍關係的兩種提法，是藥物間相互對待而言。
+        </li>
+        <li>
+            相惡：即兩種藥物合用，一種藥物與另一藥物相作用而致原有功效降低，甚至喪失藥效。如人參惡萊菔子，因萊菔子能削弱人參的補氣作用。
+        </li>
+        <li>
+            相反：即兩種藥物合用能產生毒性反應或副作用。例如甘遂和甘草，生甘遂作用較強，毒性也較大，煨甘遂瀉下作用較弱，毒性也較小，用醋炙後，可減緩其瀉下作用和降低其毒性。本品反甘草，與甘草同用則毒性增強。
+        </li>
+
+    <ul><strong>3. Word2Vec</strong></ul><br>
+    <p>
+        Word2Vec converts words into computer-understandable patterns known as vectors. It utilizes the Continuous Bag of Words (CBOW) algorithm, which takes the surrounding context words as input for a neural network and predicts the target word. Once the computer learns, we can extract word vectors for any two words and calculate the distance between them. This distance concept represents the similarity between words.
+    </p>
+    <p>
+        The interpretability of Word2Vec's association results is not as straightforward as Apriori's results. In this study, probably because the text were written in ancient Chinese or Word2Vec is less capable in understanding the contextual relationships than Apriori, the calculated result shows a similarity of only about 0.2, indicating a weak association. Therefore, relying on contextual analysis to determine the strength of associations between medicinal herbs may not be an effective approach.
+    </p>
+
+    <h2>資料視覺化</h2><br>
+    使用Tableau軟體，並匯入建立在MySQL的資料庫上的《本草綱目》，呈現視覺化的表現。<br>
+    <img src="pie-chart.png" alt="pie chart" width="700" height="400"><br>
+    由上圖得知，在《本草綱目》中，草部出現的比例是占所有的文章篇數是最多的部首。
+    <br>
+    <img src="grid-chart.png" alt="grid chart" width="700" height="400"><br>
+    <img src="grass.png" alt="grass frequency" width="800" height="500"><br>
+    由上圖得知，在草部當中，甘草出現的頻率有151個，由可以知道有那些病狀是可以使用甘草治療的。<br>
+    <img src="5-flavours.png" alt="5 flavours" width="600" height="400"><br>
+    在中藥裡指的五味是分別為辛、甘、酸、苦、鹹五種不同的味道。由上圖得知，在《本草綱目》中，以辛的味道是占最多的。<br>
+    </p>
+    <p>
+    <h2>結論</h2>
+    本研究經由實作和測試，建構中藥關聯資料庫，並且進行藥材、處方之間的群集和關聯分析，應用機器學習得到的關聯和分群分析結果，獲得藥學領域專家的正面肯定，其成果和結論如下:<br>
+    <li>
+        <strong>使用LDA可從文本的症狀名稱中萃取有意義的分群</strong>
+        大多數的研究多在分類於方劑，我們卻以病症做分類，是少見的做法。
+    </li>
+    <li>
+        <strong>使用Apriori可找出常見的中藥配藥之藥對</strong>
+        進一步分析其配伍邏輯，幫助識別複方內藥材間的七情配伍。
+    </li>
+    <li>
+        <strong>使用視覺化探索性分析藥材各項特徵</strong>
+        有效瞭解本草綱目中四性五味的分佈頻率和症狀與藥材間的關聯，直觀    表達出該如何對症下藥。
+    </li>
+    </p>
+    </p>
+
+</div>
+</body>
+</html>
