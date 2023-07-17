@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0", charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
     <title>home page</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -28,11 +29,62 @@
             建立中藥關聯資料庫讓無結構的古籍文本化為方便分析的結構化資料，並以演算法和機器學習的角度來探討本草綱目藥材、病症、處方之間的關聯和群集關係。最後以Tableau視覺化呈現。
         </li>
     </ul>
+</div>
 
+<br>
+<h2>相關技能</h2>
+<canvas id="skillBarChart" style="width:100%;max-width:700px"></canvas>
+<script>
+    var xValues = ["機器學習", "深度學習", "數據工程", "數據視覺化", "軟體開發", "AWS", "Python", "SQL", "統計", "R", "SAS"];
+    var yValues = [85, 70, 80, 95, 55, 60, 85, 90, 85, 75, 55];
+    var barColors = Array(xValues.length).fill("blue");
+
+    new Chart("skillBarChart", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues,
+                barThickness: 12,
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    min: 0,
+                    max: 100,
+                    ticks: {
+                        stepSize: 10
+                    },
+                    ticks: {
+                        stepSize: 10,
+                        font: {
+                            size: 17 // Adjust the font size as needed
+                        }
+                    }
+                }
+            },
+            plugins: {
+                title: {
+                    display: false,
+                    text: "Relevant Skills",
+                    fontSize: 40
+                }
+            }
+        }
+    });
+</script>
+<br>
+
+<div class="container">
     <h2><a href="#contact">聯絡</a></h2>
     <p>
         你可以在Linkedin聯絡我 <a href="https://www.linkedin.com/in/sherryliu29/">LinkedIn</a>.
     </p>
 </div>
+
 </body>
 </html>
