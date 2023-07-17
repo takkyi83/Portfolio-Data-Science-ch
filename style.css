@@ -49,12 +49,18 @@ th, td {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Change height to min-height to allow for content expansion */
+    min-height: 50vh; /* Change height to min-height to allow for content expansion */
 }
 
 .centered-image {
     max-width: 100%;
     max-height: 100%;
+}
+
+pre {
+    background-color: #f5f5f5;
+    padding: 10px;
+    font-family: Consolas, monospace;
 }
 
 /* 使用媒體查詢適應不同螢幕寬度 */
