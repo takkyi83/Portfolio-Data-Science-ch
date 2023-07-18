@@ -13,69 +13,6 @@
       <img src="digital-ads-banner.jpeg" class="header-image centered-image" alt="Header Image", width="500" height="200">
     </div>
   </div>
-  <h2>研究背景和動機</h2>
-  點擊率預測在任何推薦系統和數位廣告中都扮演著關鍵的角色。預測點擊率能夠幫助廣告主優化資金的配置，從而提高投資報酬。
-  <h2>研究方法</h2>
-  一般的機器學習方法在學習用戶行為背後的複雜特徵交互方面存在限制，對低階或高階交互(low order or high order intersection) 存在偏差，並且需要複雜的特徵工程來處理。相反地，DeepFM提出了一種結合了因子分解機（factorization machines）和深度神經網絡優勢的新型神經網絡架構。<br>
-
-  我在這裡使用<a href="https://github.com/shenweichen/DeepCTR-Torch"><strong>DeepCTR-Torch</strong></a>對廣告點擊率做出預測<br>
-
-  <h2>關於資料</h2>
-  <a href="https://www.kaggle.com/competitions/avazu-ctr-prediction/data">資料使用Kaggle的Click-Through Rate Prediction資料集</a><br>
-  <h3>數據特徵解釋</h3>
-  本次使用的數據集一共包含24個特徵，各特徵所代表的含義如下：<br>
-  <li>id：點擊記錄</li>
-  <li>click：是否點擊廣告（目標特徵）</li>
-  <li>hour：數據收集時間（格式為YYMMDDHH）</li>
-  <li>banner_pos：廣告投放位置</li>
-  <li>site_id：廣告客戶網站</li>
-  <li>site_domain：網站某種大類（遊戲&電商）</li>
-  <li>site_category：網站某種小類（手游&零食）</li>
-  <li>app_id：廣告提供商APP</li>
-  <li>app_domain：APP大類（社交類&內容類）</li>
-  <li>app_category：APP小類（微信&頭條）</li>
-  <li>device_id：設備硬件地址（每個設備唯一）</li>
-  <li>device_ip：設備互聯網地址（可通用）</li>
-  <li>device_model：設備型號</li>
-  <li>device_type：設備類型（手機/電腦）</li>
-  <li>device_conn_type： 設備連接類型</li>
-  <li>C1& C14-21：匿名分類變量</li>
-  <pre><code>
-  train.head()
-  </code></pre>
-  <img src="data-head.png" alt="data head"><br>
-
-
-  <h2>研究目標</h2>
-  <li>分析不同投放未知等因素對廣告點擊率的影響</li>
-  <li>建立點擊率預測模型</li>
-
-
-  <h2>為何DeepFM和其他深度學習演算法不同？</h2><br>
-  DeepDM的優點：<br>
-  <ul>
-    1. 高維稀疏特徵下交叉仍能估計，可以泛化未被觀察的交叉。
-  </ul>
-  <ul>
-    2. 訓練時參數學習和模型的預測，時間複雜性時線性的。
-  </ul>
-  <ul>
-    3. 不需要做特徵工程。
-  </ul>
-  <br>
-  <strong>DeepFM Structure<br></strong>
-  <img src="deep-fm-structure.png" alt="deep fm structure"><br>
-
-
-
-
-
-
-
-
-
-
-
 
 </div>
 
