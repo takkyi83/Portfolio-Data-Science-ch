@@ -1,7 +1,9 @@
 /* styles.css */
+
 body {
     margin: 0;
     padding: 0;
+    font-size: 18px; /* Set the desired default font size */
 }
 
 .container {
@@ -9,7 +11,6 @@ body {
     margin: 0 auto;
     padding: 0 20%;
 }
-
 
 .header-image {
     max-width: 100%;
@@ -25,7 +26,7 @@ body {
 
 .div {
     width: 300px;
-    align: "center";
+    align: center;
 }
 
 table {
@@ -54,6 +55,12 @@ pre {
     padding: 0px;
     font-family: Consolas, monospace;
 }
+
+.centered-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
 
 /* 使用媒體查詢適應不同螢幕寬度 */
 @media (max-width: 768px) {
