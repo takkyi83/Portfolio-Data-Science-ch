@@ -14272,7 +14272,9 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<div align = "right"><a href="https://ch.sherry-liu.com/"><h3>前往首頁</h3></a></div>
+<div style="text-align: right;">
+  <a href="https://ch.sherry-liu.com/"><h3>前往首頁</h3></a>
+</div>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -14327,7 +14329,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -14353,12 +14355,47 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="&#36681;&#21270;&#36039;&#26009;&#21040;&#27491;&#30906;&#30340;&#39006;&#22411;">&#36681;&#21270;&#36039;&#26009;&#21040;&#27491;&#30906;&#30340;&#39006;&#22411;<a class="anchor-link" href="#&#36681;&#21270;&#36039;&#26009;&#21040;&#27491;&#30906;&#30340;&#39006;&#22411;">&#182;</a></h3><h3 id="&#35347;&#32244;&#36039;&#26009;&#38598;&#30456;&#30070;&#40848;&#22823;&#65292;&#23565;&#36039;&#26009;&#20570;Sample">&#35347;&#32244;&#36039;&#26009;&#38598;&#30456;&#30070;&#40848;&#22823;&#65292;&#23565;&#36039;&#26009;&#20570;Sample<a class="anchor-link" href="#&#35347;&#32244;&#36039;&#26009;&#38598;&#30456;&#30070;&#40848;&#22823;&#65292;&#23565;&#36039;&#26009;&#20570;Sample">&#182;</a></h3>
+<h3 id="&#30906;&#35469;&#36039;&#26009;&#39006;&#22411;">&#30906;&#35469;&#36039;&#26009;&#39006;&#22411;<a class="anchor-link" href="#&#30906;&#35469;&#36039;&#26009;&#39006;&#22411;">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>在前置分析中，已經得知資料的unique值分佈：<br>
+hour : 240<br>
+C1 : 7<br>
+banner_pos : 7<br>
+site_id : 3564<br>
+site_domain : 4545<br>
+site_category : 23<br>
+app_id : 5207<br>
+app_domain : 334<br>
+app_category : 27<br>
+device_id : 598983<br>
+device_ip : 1905269<br>
+device_model : 6557<br>
+device_type : 5<br>
+device_conn_type : 4<br>
+C14 : 2467<br>
+C15 : 8<br>
+C16 : 9<br>
+C17 : 428<br>
+C18 : 4<br>
+C19 : 66<br>
+C20 : 166<br></p>
+<p>發現int型別的特徵，最多value的特徵僅4,545個value count，再一個500萬筆資料的資料集中，顯然非連續行變數。由此可斷定，本資料集的所有特徵，皆為Object型態的變數。</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="&#23450;&#32681;&#36039;&#26009;&#39006;&#22411;">&#23450;&#32681;&#36039;&#26009;&#39006;&#22411;<a class="anchor-link" href="#&#23450;&#32681;&#36039;&#26009;&#39006;&#22411;">&#182;</a></h2><p>直接在讀資料時就指定資料類型。除了id和click皆設定為非連續變數。</p>
+<h2 id="&#23565;&#36039;&#26009;&#20570;sample">&#23565;&#36039;&#26009;&#20570;sample<a class="anchor-link" href="#&#23565;&#36039;&#26009;&#20570;sample">&#182;</a></h2><p>訓練集相當龐大，取樣500萬筆來訓練</p>
+
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span>
@@ -14397,23 +14434,20 @@ a.anchor-link {
 </div>
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../input/avazu-ctr-prediction/train.gz&quot;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;hour&#39;</span><span class="p">],</span> <span class="n">date_parser</span><span class="o">=</span><span class="n">parse_date</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="n">skip_values</span><span class="p">)</span>
-<span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../input/avazu-ctr-prediction/test.gz&#39;</span><span class="p">)</span>
-<span class="n">submission</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../input/avazu-ctr-prediction/sampleSubmission.gz&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># train = pd.read_csv(&quot;../input/avazu-ctr-prediction/train.gz&quot;, parse_dates=[&#39;hour&#39;], date_parser=parse_date, dtype=dtype, skiprows=skip_values)</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../input/avazu-ctr-prediction/train.gz&quot;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;hour&#39;</span><span class="p">],</span> <span class="n">date_parser</span><span class="o">=</span><span class="n">parse_date</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="n">skip_values</span><span class="p">)</span>
+
+<span class="c1"># test = pd.read_csv(&#39;../input/avazu-ctr-prediction/test.gz&#39;)</span>
+<span class="c1"># submission = pd.read_csv(&#39;../input/avazu-ctr-prediction/sampleSubmission.gz&#39;)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Train dataset:&#39;</span><span class="p">,</span><span class="n">train</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test dataset:&#39;</span><span class="p">,</span><span class="n">test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Submission:&#39;</span><span class="p">,</span><span class="n">submission</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="c1"># print(&#39;Test dataset:&#39;,test.shape)</span>
+<span class="c1"># print(&#39;Submission:&#39;,submission.shape)</span>
 </pre></div>
 
      </div>
@@ -14434,8 +14468,6 @@ a.anchor-link {
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Train dataset: (5000000, 24)
-Test dataset: (4577464, 23)
-Submission: (4577464, 2)
 </pre>
 </div>
 </div>
@@ -14447,17 +14479,12 @@ Submission: (4577464, 2)
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="&#27298;&#35222;&#35347;&#32244;&#21644;&#28204;&#35430;&#38598;&#30340;&#21069;5&#34892;">&#27298;&#35222;&#35347;&#32244;&#21644;&#28204;&#35430;&#38598;&#30340;&#21069;5&#34892;<a class="anchor-link" href="#&#27298;&#35222;&#35347;&#32244;&#21644;&#28204;&#35430;&#38598;&#30340;&#21069;5&#34892;">&#182;</a></h3>
+<h3 id="&#27298;&#35222;&#35347;&#32244;&#21644;&#28204;&#35430;&#38598;">&#27298;&#35222;&#35347;&#32244;&#21644;&#28204;&#35430;&#38598;<a class="anchor-link" href="#&#27298;&#35222;&#35347;&#32244;&#21644;&#28204;&#35430;&#38598;">&#182;</a></h3>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -14476,7 +14503,7 @@ Submission: (4577464, 2)
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
 
 
 
@@ -14528,6 +14555,60 @@ Submission: (4577464, 2)
   <tbody>
     <tr>
       <th>0</th>
+      <td>1000009418151094273</td>
+      <td>0</td>
+      <td>2014-10-21</td>
+      <td>1005</td>
+      <td>0</td>
+      <td>1fbe01fe</td>
+      <td>f3845767</td>
+      <td>28905ebd</td>
+      <td>ecad2386</td>
+      <td>7801e8d9</td>
+      <td>07d7df22</td>
+      <td>a99f214a</td>
+      <td>ddd2926e</td>
+      <td>44956a24</td>
+      <td>1</td>
+      <td>2</td>
+      <td>15706</td>
+      <td>320</td>
+      <td>50</td>
+      <td>1722</td>
+      <td>0</td>
+      <td>35</td>
+      <td>-1</td>
+      <td>79</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10000169349117863715</td>
+      <td>0</td>
+      <td>2014-10-21</td>
+      <td>1005</td>
+      <td>0</td>
+      <td>1fbe01fe</td>
+      <td>f3845767</td>
+      <td>28905ebd</td>
+      <td>ecad2386</td>
+      <td>7801e8d9</td>
+      <td>07d7df22</td>
+      <td>a99f214a</td>
+      <td>96809ac8</td>
+      <td>711ee120</td>
+      <td>1</td>
+      <td>0</td>
+      <td>15704</td>
+      <td>320</td>
+      <td>50</td>
+      <td>1722</td>
+      <td>0</td>
+      <td>35</td>
+      <td>100084</td>
+      <td>79</td>
+    </tr>
+    <tr>
+      <th>2</th>
       <td>10000371904215119486</td>
       <td>0</td>
       <td>2014-10-21</td>
@@ -14554,62 +14635,8 @@ Submission: (4577464, 2)
       <td>79</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>10000720757801103869</td>
-      <td>0</td>
-      <td>2014-10-21</td>
-      <td>1005</td>
-      <td>0</td>
-      <td>d6137915</td>
-      <td>bb1ef334</td>
-      <td>f028772b</td>
-      <td>ecad2386</td>
-      <td>7801e8d9</td>
-      <td>07d7df22</td>
-      <td>a99f214a</td>
-      <td>05241af0</td>
-      <td>8a4875bd</td>
-      <td>1</td>
-      <td>0</td>
-      <td>16920</td>
-      <td>320</td>
-      <td>50</td>
-      <td>1899</td>
-      <td>0</td>
-      <td>431</td>
-      <td>100077</td>
-      <td>117</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>10001264480619467364</td>
-      <td>0</td>
-      <td>2014-10-21</td>
-      <td>1002</td>
-      <td>0</td>
-      <td>84c7ba46</td>
-      <td>c4e18dd6</td>
-      <td>50e219e0</td>
-      <td>ecad2386</td>
-      <td>7801e8d9</td>
-      <td>07d7df22</td>
-      <td>c357dbff</td>
-      <td>f1ac7184</td>
-      <td>373ecbe6</td>
-      <td>0</td>
-      <td>0</td>
-      <td>21689</td>
-      <td>320</td>
-      <td>50</td>
-      <td>2496</td>
-      <td>3</td>
-      <td>167</td>
-      <td>100191</td>
-      <td>23</td>
-    </tr>
-    <tr>
       <th>3</th>
-      <td>10003539039235338011</td>
+      <td>10000640724480838376</td>
       <td>0</td>
       <td>2014-10-21</td>
       <td>1005</td>
@@ -14621,11 +14648,11 @@ Submission: (4577464, 2)
       <td>7801e8d9</td>
       <td>07d7df22</td>
       <td>a99f214a</td>
-      <td>a4f47b2e</td>
-      <td>8a4875bd</td>
+      <td>e8275b8f</td>
+      <td>6332421a</td>
       <td>1</td>
       <td>0</td>
-      <td>15699</td>
+      <td>15706</td>
       <td>320</td>
       <td>50</td>
       <td>1722</td>
@@ -14636,30 +14663,30 @@ Submission: (4577464, 2)
     </tr>
     <tr>
       <th>4</th>
-      <td>10004181428767727519</td>
+      <td>10000679056417042096</td>
       <td>0</td>
       <td>2014-10-21</td>
       <td>1005</td>
       <td>1</td>
-      <td>0c2fe9d6</td>
-      <td>27e3c518</td>
-      <td>28905ebd</td>
+      <td>fe8cc448</td>
+      <td>9166c161</td>
+      <td>0569f928</td>
       <td>ecad2386</td>
       <td>7801e8d9</td>
       <td>07d7df22</td>
       <td>a99f214a</td>
-      <td>b7a69808</td>
-      <td>158e4944</td>
+      <td>9644d0bf</td>
+      <td>779d90c2</td>
       <td>1</td>
       <td>0</td>
-      <td>6558</td>
+      <td>18993</td>
       <td>320</td>
       <td>50</td>
-      <td>571</td>
-      <td>2</td>
-      <td>39</td>
+      <td>2161</td>
+      <td>0</td>
+      <td>35</td>
       <td>-1</td>
-      <td>32</td>
+      <td>157</td>
     </tr>
   </tbody>
 </table>
@@ -15264,6 +15291,11 @@ Name: banner_pos, dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="&#36914;&#34892;&#25976;&#25818;&#38928;&#34389;&#29702;&#20006;&#35373;&#23450;&#29305;&#24501;&#21015;(feature-columns)&#20197;&#20379;&#27231;&#22120;&#23416;&#32722;&#27169;&#22411;&#20351;&#29992;">&#36914;&#34892;&#25976;&#25818;&#38928;&#34389;&#29702;&#20006;&#35373;&#23450;&#29305;&#24501;&#21015;(feature columns)&#20197;&#20379;&#27231;&#22120;&#23416;&#32722;&#27169;&#22411;&#20351;&#29992;<a class="anchor-link" href="#&#36914;&#34892;&#25976;&#25818;&#38928;&#34389;&#29702;&#20006;&#35373;&#23450;&#29305;&#24501;&#21015;(feature-columns)&#20197;&#20379;&#27231;&#22120;&#23416;&#32722;&#27169;&#22411;&#20351;&#29992;">&#182;</a></h2>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="&#31232;&#30095;&#29305;&#24501;">&#31232;&#30095;&#29305;&#24501;<a class="anchor-link" href="#&#31232;&#30095;&#29305;&#24501;">&#182;</a></h3><ul>
 <li>C1</li>
 <li>banner_pos</li>
@@ -15298,11 +15330,6 @@ Name: banner_pos, dtype: int64</pre>
 </div>
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#36914;&#34892;&#25976;&#25818;&#38928;&#34389;&#29702;&#20006;&#35373;&#23450;&#29305;&#24501;&#21015;(feature-columns)&#20197;&#20379;&#27231;&#22120;&#23416;&#32722;&#27169;&#22411;&#20351;&#29992;">&#36914;&#34892;&#25976;&#25818;&#38928;&#34389;&#29702;&#20006;&#35373;&#23450;&#29305;&#24501;&#21015;(feature columns)&#20197;&#20379;&#27231;&#22120;&#23416;&#32722;&#27169;&#22411;&#20351;&#29992;<a class="anchor-link" href="#&#36914;&#34892;&#25976;&#25818;&#38928;&#34389;&#29702;&#20006;&#35373;&#23450;&#29305;&#24501;&#21015;(feature-columns)&#20197;&#20379;&#27231;&#22120;&#23416;&#32722;&#27169;&#22411;&#20351;&#29992;">&#182;</a></h2>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -16271,8 +16298,7 @@ Wall time: 23min 55s
 <li><p>驗證集上的損失值和 AUC 值：驗證集上的二元交叉熵為 0.4153，AUC 值為 0.7275。從這些數值來看，模型在驗證集上的表現較訓練集差，損失值較高，AUC 值較低。這可能表示模型在驗證集上的泛化能力較差。</p>
 </li>
 </ul>
-<p>若要進一步優化，我們可以：</p>
-<ul>
+<h3 id="&#33509;&#35201;&#36914;&#19968;&#27493;&#20778;&#21270;&#65292;&#25105;&#20497;&#21487;&#20197;&#65306;">&#33509;&#35201;&#36914;&#19968;&#27493;&#20778;&#21270;&#65292;&#25105;&#20497;&#21487;&#20197;&#65306;<a class="anchor-link" href="#&#33509;&#35201;&#36914;&#19968;&#27493;&#20778;&#21270;&#65292;&#25105;&#20497;&#21487;&#20197;&#65306;">&#182;</a></h3><ul>
 <li>增加驗證數據的多樣性，以提高驗證集的性能</li>
 <li>調整模型的參數</li>
 <li>改進特徵工程</li>
@@ -16424,11 +16450,6 @@ Wall time: 23min 55s
 
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<div align = "right"><a href="https://ch.sherry-liu.com/"><h3>前往首頁</h3></a></div>
-</div>
 </div>
 </body>
 
