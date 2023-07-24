@@ -47,8 +47,8 @@
 </div>
 
 <script>
-    var xValues = ["機器學習", "深度學習", "數據工程", "數據視覺化", "軟體開發", "AWS", "Python", "SQL", "統計", "R", "SAS"];
-    var yValues = [85, 70, 80, 95, 55, 60, 85, 90, 85, 75, 55];
+    var xValues = ["機器學習", "深度學習", "數據工程", "數據視覺化", "軟體開發", "資料分析"];
+    var yValues = [85, 70, 80, 90, 55, 95];
     var barColors = Array(xValues.length).fill("blue");
 
     new Chart("skillBarChart", {
@@ -58,7 +58,7 @@
             datasets: [{
                 backgroundColor: barColors,
                 data: yValues,
-                barThickness: 12,
+                barThickness: 12
             }]
         },
         options: {
@@ -69,12 +69,16 @@
                     min: 0,
                     max: 100,
                     ticks: {
-                        stepSize: 10
-                    },
-                    ticks: {
                         stepSize: 10,
                         font: {
-                            size: 17 // Adjust the font size as needed
+                            size: 17
+                        }
+                    }
+                },
+                x: {
+                    ticks: {
+                        font: {
+                            size: 14
                         }
                     }
                 }

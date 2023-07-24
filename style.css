@@ -71,4 +71,8 @@ pre {
     .content {
         padding: 20px;
     }
+
+    #skillBarChart {
+        font-size: 12px; /* Adjust the font size for smaller screens */
+    }
 }
