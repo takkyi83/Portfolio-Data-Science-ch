@@ -51,6 +51,12 @@
     var yValues = [85, 70, 80, 90, 55, 95];
     var barColors = Array(xValues.length).fill("blue");
 
+    // Sort the xValues and yValues based on yValues in descending order
+    var sortedData = yValues.map((value, index) => ({ x: xValues[index], y: value }));
+    sortedData.sort((a, b) => b.y - a.y);
+    xValues = sortedData.map(item => item.x);
+    yValues = sortedData.map(item => item.y);
+
     new Chart("skillBarChart", {
         type: "bar",
         data: {
