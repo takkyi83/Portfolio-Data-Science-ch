@@ -94,7 +94,7 @@
         <li>
             2. 將別名、性味、主治、附方、部位轉成格式化格式<br>
             文本內容：<br>
-            <img src="convert-aliases.png", alt="convert aliases", style="width: 100%; height: auto;"> <br>
+            <img src="convert-aliases.png", alt="convert aliases"> <br>
             使用Regular Expression將別名、性味、主治、附方、部位擷取出來
             <br>
             <img src="regex-extract-aliases.png", alt="use regex to extract aliases"> <br>
@@ -137,7 +137,7 @@
         <li>
             4. 將附方轉成結構化格式<br>
             文本內容：<br>
-            <img src="format-prescription.png", alt="prescription formatting" width=700 height="300"><br>
+            <img src="format-prescription.png", alt="prescription formatting"><br>
             使用Regular Expression將附方名稱和附方描述擷取出來<br>
             <img src="prescription-regex.png", alt="prescription regex"><br>
             將附方名稱和附方描述轉成結構化格式<br>
@@ -150,9 +150,9 @@
     資料庫包含數個中藥以及病症資料表。將結構化後的文本建立關聯資料庫以便於之後的分析。
     <br>
         <strong>使用Entity–relationship model呈現</strong><br>
-        <img src="er-model.png", alt="database er model", style="width: 100%; height: auto;"><br>
+        <img src="er-model.png", alt="database er model"><br>
         <strong>資料表關聯圖</strong><br>
-        <img src="db-diagram.png" alt="database relationship diagram" style="width: 100%; height: auto;"><br>
+        <img src="db-diagram.png" alt="database relationship diagram"><br>
     </p>
     <p>
     <h1>資料分析</h1>
@@ -166,8 +166,8 @@
         <p>
             本研究利用LDA分群分法，萃取病症名稱之特徵，且分成2至45群，目前最多分到45組，並請教相關領域的專家，發現分至45組的結果最為容易解釋，且可以嘗試分45群以上並觀察其結果。
         </p>
-        <img src="lda-python.png" alt="lda-python" style="width: 100%; height: auto;"><br>
-        <img src="lda-python2.png" alt="lda-python2" style="width: 100%; height: auto;"><br>
+        <img src="lda-python.png" alt="lda-python"><br>
+        <img src="lda-python2.png" alt="lda-python2"><br>
 
     </ul>
     <ul><h2>2. Apriori藥物關聯性結果解讀</h2><br></ul>
@@ -183,7 +183,7 @@
             </li>
         </p>
         <br>
-        <img src="apriori1.png" alt="apriori1" style="width: 70%; height: auto;"><br>
+        <img src="apriori1.png" alt="apriori1"><br>
         <li>
             相使：即在性能和功效方面有某種共性的藥物配合使用，而以一種藥物為主，另一種藥物為輔，能提高主藥物的療效。例如:補氣利水的黃芪與利水健脾的茯苓合用，茯苓能增強黃芪補氣利水的治療效果。另外還有天門冬與生地黃 ，茯苓與人參也是此類藥對。
         </li>
@@ -201,8 +201,8 @@
         </li>
         <br>
         <strong>Apriori演算法</strong>
-        <img src="apriori-python.png", alt="apriori-python", style="width: 100%; height: auto;"><br>
-        <img src="apriori-python2.png", alt="apriori-python", style="width: 100%; height: auto;"><br>
+        <img src="apriori-python.png", alt="apriori-python"><br>
+        <img src="apriori-python2.png", alt="apriori-python"><br>
 
 
     <ul><h2>3. Word2vec與藥物關聯性</h2></ul><br>
@@ -215,7 +215,7 @@
 
     <h1>資料視覺化</h1><br>
     使用Tableau軟體，並匯入建立在MySQL的資料庫上的《本草綱目》，呈現視覺化的表現。<br>
-    <img src="pie-chart.png" alt="pie chart" style="width: 50%; height: auto;"><br>
+    <img src="pie-chart.png" alt="pie chart" style="width: 70%; height: auto;"><br>
     由上圖得知，在《本草綱目》中，草部出現的比例是占所有的文章篇數是最多的部首。
     <br>
     <img src="grid-chart.png" alt="grid chart" style="width: 90%; height: auto;><br>
