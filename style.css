@@ -61,6 +61,12 @@ pre {
     margin-top: 20px;
 }
 
+pre {
+    max-height: 300px;
+    overflow-y: auto; /* 添加滚动条，只在内容溢出时显示 */
+    /* 这里可以添加其他样式，比如字体大小、边框等 */
+}
+
 
 /* 使用媒體查詢適應不同螢幕寬度 */
 @media (max-width: 768px) {

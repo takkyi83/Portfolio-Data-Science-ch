@@ -8,18 +8,17 @@
 <body>
 <div style="text-align: right;"><h2><a href="https://ch.sherry-liu.com/">前往首頁</a></h2></div>
 <div class="container">
-    <h1>選擇困難症？ 如何以科學的方法來決策：多準則決策（Multi-criteria decision）</h1>
+    <h1>有選擇困難症？ 如何以科學的方法來決策：多準則決策（Multi-criteria decision）</h1>
     <div class="content">
         <div class="image-container">
             <img src="mcdm-banner.png" class="header-image centered-image" alt="Header Image">
         </div>
     </div>
     <p>
-        你想買一隻手機，你會用什麼標準來抉擇呢？ 是只要我喜歡就買？ 還是選擇最便宜的？ 我們的抉擇往往很少取決於單一條件。抉擇通常要考慮多個選擇，多個條件，多個限制，短期影響，長期影響，影響的權重等等。不過於複雜的抉擇，例如買手機，可能有5～6個考量點，我們還可以應付。但如果是決定要把機場蓋在哪裡呢？這其中牽涉的考量點多達數十個，中間有錯綜複雜的關係，考量點之間往往有衝突（conflicting criteria），而我們需要做出犧牲（tradeoff)。這往往需要一些科學的方式來幫助我們做出最佳的選擇。這裡介紹的多準則決策（Multi-criteria decision， MCDM）就是其中之一。
+        你想買一隻手機，你會用什麼標準來抉擇呢？ 是只要喜歡就買？ 還是選擇最便宜的？ 還是兩個皆是？ 我們的抉擇往往很少取決於單一條件。抉擇通常要考慮多個條件、多個限制、短期影響、長期影響、影響的權重等等。不過於複雜的抉擇，例如買手機，可能有5～6個考量點，我們還可以應付。但如果是決定要把機場蓋在哪裡呢？這其中牽涉的考量點多達數十個甚至更多，中間有錯綜複雜的關係。考量點之間往往有衝突（conflicting criteria），面對這麼更複雜的選擇，這往往需要一些科學的方式來幫助我們。這裡介紹的多準則決策（Multi-criteria decision， MCDM）就是其中之一。
     </p>
     <h2>什麼是多準則決策？</h2>
     <p>
-        抉擇
         多準則決策（Multi-criteria decision， MCDM）是指在面對多個相互競爭或衝突的準則時，做出最佳決策的過程。在這種情況下，不同的準則可能對決策結果產生不同的影響，而且這些準則可能存在不同的優先級。多準則決策旨在尋找一種有效的方法來綜合考慮這些準則，並找到最優的解決方案。
     </p>
     <p>
@@ -27,42 +26,40 @@
     </p>
 
     <p>
-        解決多準則決策問題的方法有很多，其中一些常見的方法包括：
+        解決多準則決策問題的方法有很多，這裡介紹一下幾種方法。
 
+    <ul>1. 層次分析法（Analytic Hierarchy Process，AHP）：將多準則問題轉換為層次結構，然後通過對比判斷矩陣來評估不同準則之間的相對重要性，最終找到最優解。</ul>
 
         <ul>1. 加權總分法（Weighted Sum Method）：將每個準則的重要性進行加權，然後計算各個解決方案的加權總分，最終選擇總分最高的方案作為最佳決策。</ul>
 
-        <ul>2.動態規劃法（Dynamic Programming）：將問題分解為多個子問題，並找到每個子問題的最優解，然後通過動態規劃來求解整個問題的最優解。</ul>
+        <ul>2.網路層級分析法（Analytic Network Process，ANP）：ANP是一種多準則決策方法，它是AHP（層次分析法）的擴展，用於解決具有循環依賴和相互作用的複雜決策問題。ANP通過建立一個具有層次結構的網路模型來評估不同準則和子準則之間的相對重要性，並最終進行權重的組合和決策的選擇。這個方法在處理複雜的多準則決策問題時很有用，特別是當準則之間存在相互依賴關係時。</ul>
 
-        <ul>3. 層次分析法（Analytic Hierarchy Process，AHP）：將多準則問題轉換為層次結構，然後通過對比判斷矩陣來評估不同準則之間的相對重要性，最終找到最優解。</ul>
 
-        <ul>4. 綜合評價法（Comprehensive Evaluation Method）：將多個準則進行綜合評價，尋找最佳的解決方案。</ul>
+        <ul>3. 簡單加權法（Simple Additive Weighting, SAW）：該方法將每個準則的重要性以權重的形式表示，並將每個選項在每個準則上的表現乘以相應的權重，然後將這些乘積相加，得到每個選項的綜合得分。最終，得分最高的選項被視為最優選擇。</ul>
 
-        <ul>5. 經驗判斷法：根據專家的經驗和直覺進行決策，適用於一些複雜問題，但缺乏量化準則的情況。</ul>
+    <ul>4. 使用簡單加權法（Simple Additive Weighting, SAW）進行選擇，並使用「最大標準化」（Max Standardisation）對屬性值進行標準化
+    </ul>
+
+    <ul>5. 採用「簡單加權法（Simple Additive Weighting，SAW）」與「幾何平均標準化（Geo-Mean Standardization）」</ul>
+
+    <ul>6. 理想解相似度順序偏好法 Technique for Order Preference by Similarity to the Ideal Solution，TOPSIS)</ul>
+
     </p>
     <p>多準則決策是一個複雜的問題，不同的問題可能需要不同的方法和技術來解決。選擇合適的多準則決策方法需要根據具體問題的特點和需求來進行評估和選擇。
     </p>
 
-    <h2>層次分析法（Analytic Hierarchy Process，AHP）</h2>
+    <h2>1. 層次分析法（Analytic Hierarchy Process，AHP）</h2>
     <p>
         層次分析法是一種用於處理多準則決策問題的系統性方法，由美國數學家和運籌學家Thomas L. Saaty於1970年提出。AHP的目標是幫助決策者在面對複雜的抉擇情況時，將不同的準則和選擇方案進行結構化、量化並進行比較，最終找到最優的決策方案。
     </p>
     <p>
         AHP的基本思想是將決策問題分解為多個層次（Hierarchy），每個層次代表一個層次的因素或準則，並且層次之間呈現父子關係。最上層是目標層，即要達成的目標或問題的整體目標。下一層是準則層，包含了實現目標所需的各個準則或因素。再下一層是選擇層，包含了不同的選擇方案。每個層次中的元素之間都存在兩兩比較的關係。
     </p>
-    <p>
-        AHP的主要步驟如下：<br>
-        <ul>1. 創建層次結構：將決策問題分解為目標、準則和選擇三個層次，並確定它們之間的父子關係。</ul>
-        <ul>2. 建立兩兩比較矩陣：對於每個層次中的元素，對它們之間進行兩兩比較，並根據其相對重要性進行評分。評分通常使用1到9的尺度，其中1表示兩個元素同等重要，9表示其中一個元素遠遠重要於另一個元素。</ul>
-        <ul>3. 計算權重：通過對比判斷矩陣，使用數學方法計算每個層次中元素的權重，這些權重代表了它們在整個層次結構中的相對重要性。</ul>
-        <ul>4. 一致性檢驗：檢查每個比較矩陣的一致性，以確保決策者的判斷是一致且無矛盾的。</ul>
-        <ul>5. 綜合評價：將權重與分數相乘，得到每個選擇方案的綜合評價。</ul>
-        <ul>6. 最優選擇：根據綜合評價找到最優的決策方案。</ul>
-    </p>
+
     <p>
         AHP的優點在於能夠將複雜的決策問題進行結構化，將主觀的評價轉換為量化的數據，使決策過程更加透明和客觀。它可以幫助決策者更好地理解決策問題的層次結構和各個因素之間的相對重要性，從而做出更明智的決策。因此，AHP在許多領域，包括企業管理、工程規劃、環境評估等方面都得到廣泛應用。
     </p>
-    <h3>用R代碼實現了層次分析法</h3>
+
     <ul>
         1. 創建比較矩陣：首先創建一個大小為3x3的比較矩陣M，用於比較三個元素之間的相對重要性。比較矩陣是對稱矩陣，對角線元素為1，表示元素與自身的比較。
     </ul>
@@ -147,9 +144,10 @@
     }
     </code></pre>
 
-    <h2>層次分析法（Analytic Hierarchy Process, AHP）</h2>
-    層次分析法用於解決具有多個層次和多準則的決策問題<br>
-    這裡以選定蓋機場的地點為例，用R代碼實作AHP，我們考量的變數有：市場吸引力、可達性、成本、文化吸引力。
+    <h2>2. 層次分析法（Analytic Network Process， ANP）</h2>
+    是一種多準則決策方法，用於解決複雜的決策問題，特別是在多個準則和子準則之間存在相互關聯的情況。<br>
+    ANP是AHP的擴展，用於解決具有循環依賴和相互作用的多準則決策。<br>
+    以下用ANP評估機場可達性（Airport Accessibility）
     <p>
         <ul>
         1. MAR (Market Attractiveness Rating)
@@ -379,8 +377,211 @@
     </ul>
     </p>
 
+    <h2>3. 簡單加權法（Simple Additive Weighting, SAW）</h2>
+    SAW方法允許決策者根據屬性的相對重要性來分配權重，然後根據屬性值的加權和來計算每個選擇的分數，進而對選擇進行排名，幫助決策過程。
+    <ul>
+        1. 創建一個空的資料框「y」，用於存儲每個汽車選擇的屬性值。該資料框有4行，分別代表汽車型號（'Civic'、'Saturn'、'Ford'、'Mazda'），有3列代表屬性（'Style'、'Reliability'、'FuelEco'）。
+        <pre><code>
+            # Create empty data frame
+            y <- data.frame(matrix(data=0, ncol = 3, nrow = 4));
+            colnames(y) <- c("Style","Reliability","FuelEco");
+            rownames(y) <- c("Civic","Saturn","Ford","Mazda");
+            str(y);
+        </code></pre>
+    </ul>
 
+    <ul>2. 使用「c()」函數，將屬性值分配給每個汽車選擇的行。每行填充了汽車型號的屬性值（Style、Reliability、FuelEco）。
+        <pre><code>
+            # Assign atrribute values to each alternative row
+            y["Civic",] <- c(7,9,9);
+            y["Saturn",] <- c(8,7,8);
+            y["Ford",] <- c(9,6,8);
+            y["Mazda",] <- c(6,7,8);
+        </code></pre>
+    </ul>
 
+    <ul>
+        3. 添加一個額外的列「SAW_score_vector」，用於存儲計算後的每個汽車選擇的SAW分數。初始值為所有選擇的分數都設為0。
+        <pre><code>
+            # Append a column to store the SAW-ed scores for each alternative
+            SAW_score_vector <- c(0,0,0,0);
+            y<-cbind(y,SAW_score_vector);
+        </code></pre>
+    </ul>
+
+    <ul>4. 定義「SAW_weight_vector」，表示決策者（DM）分配給每個屬性的權重。
+    <pre><code>
+        SAW_weight_vector <- c(0.3,0.4,0.3);
+    </code></pre>
+    </ul>
+
+    <ul>5. 通過將屬性值與權重向量相乘，計算每個汽車選擇的加權總分。計算後的分數存儲在每個汽車選擇的「SAW_score_vector」列中。
+    </ul>
+    <pre><code>
+        SAW_weight_vector * y["Civic",];
+        y["Civic","SAW_score_vector"] <- sum (SAW_weight_vector * y["Civic",]);
+
+        SAW_weight_vector * y["Saturn",];
+        y["Saturn","SAW_score_vector"] <- sum (SAW_weight_vector * y["Saturn",]);
+
+        SAW_weight_vector * y["Ford",];
+        y["Ford","SAW_score_vector"] <- sum (SAW_weight_vector * y["Ford",]);
+
+        SAW_weight_vector * y["Mazda",];
+        y["Mazda","SAW_score_vector"] <- sum (SAW_weight_vector * y["Mazda",]);
+    </code></pre>
+
+    <ul> 6.根據計算後的SAW分數，以降序方式對選擇進行排序（排名）。排名結果存儲在「SAW_rank_vector」列中。
+        <pre><code>
+        SAW_rank_vector <- order(-y$SAW_score_vector);
+        y<-cbind(y,SAW_rank_vector);
+        </code></pre>
+    </ul>
+
+    <h2>4. 使用簡單加權法（Simple Additive Weighting, SAW）進行選擇，並使用「最大標準化」（Max Standardisation）對屬性值進行標準化</h2>
+    和上一個SAW例子的代碼基本相同。不同處在步驟3之前構建一個新的資料框「y_standardised」，用於存儲標準化後的屬性值。將每個屬性值除以該屬性的最大值，進行最大標準化。其餘步驟相同。<br>
+    使用最大標準化可以將不同屬性的值轉換為相同的範圍，使得它們在加權計算時的影響平等，幫助確保更準確地進行決策過程。
+    <pre><code>
+        # Construct standardized y
+        y_standardised <- y;
+        y_standardised[,"Style"]<-y[,"Style"]/max(y[,"Style"]);
+        y_standardised[,"Reliability"]<-y[,"Reliability"]/max(y[,"Reliability"]);
+        y_standardised[,"FuelEco"]<-y[,"FuelEco"]/max(y[,"FuelEco"]);
+        y<-y_standardised;
+    </code></pre>
+
+    <h2>5. 採用「簡單加權法（Simple Additive Weighting，SAW）」與「幾何平均標準化（Geo-Mean Standardization）」</h2>
+    在簡單加權法的步驟3之前計算y_standardised以用幾何平均來標準化y。其他步驟相同
+    <pre><code>
+        # Construct standardized y
+        y_standardised <- y;
+        y_standardised[,"Style"]<-y[,"Style"]/sqrt(sum(y[,"Style"]^2));
+        y_standardised[,"Reliability"]<-y[,"Reliability"]/sqrt(sum(y[,"Reliability"]^2));
+        y_standardised[,"FuelEco"]<-y[,"FuelEco"]/sqrt(sum(y[,"FuelEco"]^2));
+        y<-y_standardised;
+    </code></pre>
+
+    <h2>6. 理想解相似度順序偏好法（Technique for Order Preference by Similarity to the Ideal Solution, TOPSIS）</h2>
+    是一種多屬性決策方法，用於在多個競爭方案中找到最佳選擇。它的基本理念是尋找一個理想解和一個反理想解，然後根據每個方案與這兩個極端解的相似度來進行排序。它適用於各種競爭方案的選擇和排序問題。能幫助決策者更清晰地理解和評估各個方案的優勢和劣勢，從而做出更好的選擇。需要注意的是，TOPSIS方法的結果依賴於所選擇的標準化方法和權重向量的設定，因此進行決策時需要謹慎處理這些參數。
+    <ul>
+        1. 創建決策矩陣：首先，將所有的競爭方案的屬性值組成一個決策矩陣，其中每一行代表一個方案，每一列代表一個屬性。
+        <pre><code>
+            DecisionMatrix<-matrix(0,4,4);
+            DecisionMatrix[1,]<-c( 49, 81, 81, 64);
+            DecisionMatrix[2,]<-c( 64, 49, 64, 49);
+            DecisionMatrix[3,]<-c( 81, 36, 64, 81);
+            DecisionMatrix[4,]<-c( 36, 49, 64, 36);
+            DecisionMatrix;
+        </code></pre>
+    </ul>
+
+    <ul>
+        2. 標準化決策矩陣：對決策矩陣進行標準化，這是為了避免因為不同屬性的量值范圍差異而導致計算結果不公平。標準化的方法可以是最大-最小標準化、z-score標準化等。標準化後，每個屬性的值都落在0到1的範圍內。
+        <pre><code>
+            #Normalize the decision matrix according to the standard operation defined by TOPSIS
+            NumRows<-nrow(DecisionMatrix);
+            NumCols<-ncol(DecisionMatrix);
+            D_normalize<-matrix(0,NumRows,NumCols);
+            for ( j in c(1:NumCols) )
+             {   D_normalize[,j]<-DecisionMatrix[,j]/sqrt(sum(DecisionMatrix[1:NumRows,j]^2))
+             };
+
+            #Setup the criterion weight vector CWV and compute the weighted (normalized) decision matrix WNDMatrix
+            CWV<-c(.1,.4,.3,.2);
+            WNDMatrix<-matrix(0,NumRows,NumCols);
+            for ( j in c(1:NumCols))
+             {   WNDMatrix[,j]<-CWV[j]*D_normalize[,j];
+             };
+        </code></pre>
+    </ul>
+
+    <ul>
+        3.確定理想解和反理想解：在標準化後的決策矩陣中，找到理想解（A+）和反理想解（A-）。理想解是每個屬性中的最大值，而反理想解則是每個屬性中的最小值。
+        <pre><code>
+            # Determine the ideal A_plus and anti-ideal solution A_minus
+            A_plus<-c(0,0,0,0);
+            for ( j in c(1:NumCols))
+             {   A_plus[j]<-max(WNDMatrix[1:NumRows,j]);
+             };
+            A_plus;
+            # Give a special process because 4 is TLTB
+            A_plus[4]<-min(WNDMatrix[1:NumRows,4]);
+
+            A_minus<-c(0,0,0,0);
+            for ( j in c(1:NumCols))
+             {   A_minus[j]<-min(WNDMatrix[1:NumRows,j]);
+             };
+            # Give a special process because 4 is TLTB
+            A_minus[4]<-max(WNDMatrix[1:NumRows,4]);
+        </code></pre>
+    </ul>
+
+    <ul>
+        4. 計算方案與理想解和反理想解的相似度：計算每個方案與理想解的距離（稱為S+），以及與反理想解的距離（稱為S-）。一般來說，使用歐氏距離或曼哈頓距離等來計算相似度。
+        <pre><code>
+        # Calculate the seperation measure for each alternative
+
+        # Distances toward ideal solution A_plus
+        S_to_ideal<-c(1:NumRows);
+        for( i in c(1:NumRows) )
+         {   S_to_ideal[i]<-sqrt( sum(
+                                       (WNDMatrix[i,]-A_plus[])^2
+                                     )
+                                );
+         };
+
+        # Distances toward anti-ideal solution A_minus
+        S_to_anti_ideal<-c(1:NumRows);
+        for( i in c(1:NumRows) )
+         {   S_to_anti_ideal[i]<-sqrt( sum(
+                                           (WNDMatrix[i,]-A_minus[])^2
+                                          )
+                                     );
+         };
+        </code></pre>
+    </ul>
+
+    <ul>
+        5. 計算相對接近度：使用S+和S-計算每個方案相對於理想解的相對接近度，通常用Ti的數值來表示。
+        <pre><code>
+            # Calculate the relative closeness (of each alternative) to the ideal solution, which is the Tie-Jin Xi-Shu
+            RC<-c(1:NumRows);
+            for( i in c(1:NumRows) )
+             {   RC[i]<-S_to_anti_ideal[i]/(S_to_ideal[i]+S_to_anti_ideal[i]);
+             }; # Equivalant to: RC<-S_to_anti_ideal/(S_to_ideal+S_to_anti_ideal)
+        </code></pre>
+    </ul>
+
+    <ul>
+        6. 決策方案排序：根據相對接近度Ti的值，將方案進行排序。Ti值越接近1，表示方案越接近理想解，排名越靠前。
+        <pre><cpde>
+            order(RC, decreasing=TRUE);
+            RC[order(RC, decreasing=TRUE)];
+        </cpde></pre>
+    </ul>
+
+    <h2>結論</h2>
+    <p>
+        在這個多準則決策方法（MCDM）的分析中，實作了三種主要方法：簡單加權法（Simple Additive Weighting, SAW）、最大標準化和幾何平均標準化。此外，還引入了理想解相似度順序偏好法（Technique for Order Preference by Similarity to the Ideal Solution, TOPSIS）作為另一種重要的多準則決策工具。
+    </p>
+    <p>
+        在MCDM中，我們面臨著不同方案之間的競爭，並需要基於多個屬性的評估來做出最佳選擇。每種方法都有其特定的優勢和限制，因此在決策過程中，我們必須根據具體情況選擇適合的方法。
+    </p>
+    <p>
+        簡單加權法（SAW）允許決策者根據屬性的相對重要性來分配權重，並根據加權值對方案進行排名。這種方法的優勢在於易於理解和實現，但它假設屬性的重要性是固定的，並不能很好地處理不同屬性之間的相對重要性變化。
+    </p>
+    <p>
+        為了克服簡單加權法的限制，我們引入了最大標準化和幾何平均標準化。最大標準化將屬性值縮放到0到1的範圍，確保不同屬性值的公平比較，並消除因量值范圍差異而導致計算結果不公平的問題。幾何平均標準化進一步提供了平衡的評估方式，使得屬性的相對重要性更加均衡。
+    </p>
+    <p>
+        此外，TOPSIS方法為多準則決策提供了另一種強大的框架。它不僅考慮了方案與理想解的距離（S+），還考慮了方案與反理想解的距離（S-）。這樣一來，我們可以更全面地評估每個方案的相對優勢和劣勢，從而更準確地進行排名和選擇。
+    </p>
+    <p>
+        然而，需要強調的是，這些方法的效果取決於決策背景、屬性權重和標準化方法的選擇。在實際應用中，我們必須仔細考慮這些因素，以確保得出合理且可靠的結果。
+    </p>
+    <p>
+        多準則決策方法為各個領域的複雜決策場景提供了有價值的工具。通過結合不同的方法並適應特定的決策情境，我們可以更好地理解和評估各個方案的優勢和劣勢，從而做出更明智的選擇。這些方法不僅在商業和工業領域有用，也可以應用於社會、環境和政策等各種領域，幫助我們解決現實生活中的各種複雜問題。
+    </p>
 </div>
 <div style="text-align: right;"><h2><a href="https://ch.sherry-liu.com/">前往首頁</a></h2></div>
 </body>
