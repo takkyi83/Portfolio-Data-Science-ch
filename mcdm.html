@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <title>Project Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div style="text-align: right;"><h2><a href="https://ch.sherry-liu.com/">前往首頁</a></h2></div>
+<div class="container">
+    <h1>選擇困難症？ 如何以科學的方法來決策：多準則決策（Multi-criteria decision）</h1>
+    <div class="content">
+        <div class="image-container">
+            <img src="mcdm-banner.png" class="header-image centered-image" alt="Header Image">
+        </div>
+    </div>
+    <p>
+        你想買一隻手機，你會用什麼標準來抉擇呢？ 是只要我喜歡就買？ 還是選擇最便宜的？ 我們的抉擇往往很少取決於單一條件。抉擇通常要考慮多個選擇，多個條件，多個限制，短期影響，長期影響，影響的權重等等。不過於複雜的抉擇，例如買手機，可能有5～6個考量點，我們還可以應付。但如果是決定要把機場蓋在哪裡呢？這其中牽涉的考量點多達數十個，中間有錯綜複雜的關係，考量點之間往往有衝突（conflicting criteria），而我們需要做出犧牲（tradeoff)。這往往需要一些科學的方式來幫助我們做出最佳的選擇。這裡介紹的多準則決策（Multi-criteria decision， MCDM）就是其中之一。
+    </p>
+    <h2>什麼是多準則決策？</h2>
+    <p>
+        抉擇
+        多準則決策（Multi-criteria decision， MCDM）是指在面對多個相互競爭或衝突的準則時，做出最佳決策的過程。在這種情況下，不同的準則可能對決策結果產生不同的影響，而且這些準則可能存在不同的優先級。多準則決策旨在尋找一種有效的方法來綜合考慮這些準則，並找到最優的解決方案。
+    </p>
+    <p>
+        多準則決策可以應用在各種不同的領域和問題中，例如企業管理、投資決策、資源分配、城市規劃、環境保護等。在這些問題中，決策者需要考慮多個相關因素和目標，並在這些因素之間進行權衡和取捨。
+    </p>
+
+    <p>
+        解決多準則決策問題的方法有很多，其中一些常見的方法包括：
+
+
+        <ul>1. 加權總分法（Weighted Sum Method）：將每個準則的重要性進行加權，然後計算各個解決方案的加權總分，最終選擇總分最高的方案作為最佳決策。</ul>
+
+        <ul>2.動態規劃法（Dynamic Programming）：將問題分解為多個子問題，並找到每個子問題的最優解，然後通過動態規劃來求解整個問題的最優解。</ul>
+
+        <ul>3. 層次分析法（Analytic Hierarchy Process，AHP）：將多準則問題轉換為層次結構，然後通過對比判斷矩陣來評估不同準則之間的相對重要性，最終找到最優解。</ul>
+
+        <ul>4. 綜合評價法（Comprehensive Evaluation Method）：將多個準則進行綜合評價，尋找最佳的解決方案。</ul>
+
+        <ul>5. 經驗判斷法：根據專家的經驗和直覺進行決策，適用於一些複雜問題，但缺乏量化準則的情況。</ul>
+    </p>
+    <p>多準則決策是一個複雜的問題，不同的問題可能需要不同的方法和技術來解決。選擇合適的多準則決策方法需要根據具體問題的特點和需求來進行評估和選擇。
+    </p>
+
+    <h2>層次分析法（Analytic Hierarchy Process，AHP）</h2>
+    <p>
+        層次分析法是一種用於處理多準則決策問題的系統性方法，由美國數學家和運籌學家Thomas L. Saaty於1970年提出。AHP的目標是幫助決策者在面對複雜的抉擇情況時，將不同的準則和選擇方案進行結構化、量化並進行比較，最終找到最優的決策方案。
+    </p>
+    <p>
+        AHP的基本思想是將決策問題分解為多個層次（Hierarchy），每個層次代表一個層次的因素或準則，並且層次之間呈現父子關係。最上層是目標層，即要達成的目標或問題的整體目標。下一層是準則層，包含了實現目標所需的各個準則或因素。再下一層是選擇層，包含了不同的選擇方案。每個層次中的元素之間都存在兩兩比較的關係。
+    </p>
+    <p>
+        AHP的主要步驟如下：<br>
+        <ul>1. 創建層次結構：將決策問題分解為目標、準則和選擇三個層次，並確定它們之間的父子關係。</ul>
+        <ul>2. 建立兩兩比較矩陣：對於每個層次中的元素，對它們之間進行兩兩比較，並根據其相對重要性進行評分。評分通常使用1到9的尺度，其中1表示兩個元素同等重要，9表示其中一個元素遠遠重要於另一個元素。</ul>
+        <ul>3. 計算權重：通過對比判斷矩陣，使用數學方法計算每個層次中元素的權重，這些權重代表了它們在整個層次結構中的相對重要性。</ul>
+        <ul>4. 一致性檢驗：檢查每個比較矩陣的一致性，以確保決策者的判斷是一致且無矛盾的。</ul>
+        <ul>5. 綜合評價：將權重與分數相乘，得到每個選擇方案的綜合評價。</ul>
+        <ul>6. 最優選擇：根據綜合評價找到最優的決策方案。</ul>
+    </p>
+    <p>
+        AHP的優點在於能夠將複雜的決策問題進行結構化，將主觀的評價轉換為量化的數據，使決策過程更加透明和客觀。它可以幫助決策者更好地理解決策問題的層次結構和各個因素之間的相對重要性，從而做出更明智的決策。因此，AHP在許多領域，包括企業管理、工程規劃、環境評估等方面都得到廣泛應用。
+    </p>
+    <h3>用R代碼實現了層次分析法</h3>
+    <ul>
+        1. 創建比較矩陣：首先創建一個大小為3x3的比較矩陣M，用於比較三個元素之間的相對重要性。比較矩陣是對稱矩陣，對角線元素為1，表示元素與自身的比較。
+    </ul>
+    <pre><code>
+        # 引入gdata函式庫
+        library(gdata);
+
+        # 創建一個3x3的對角矩陣M
+        M <- diag(3);
+
+        # 對M進行賦值
+        M[2,3]<-1/3;
+        M[1,3]<-3;
+        M[1,2]<-5;
+
+        # 由上三角矩陣計算下三角矩陣
+        lowerTriangle(M) <- 1/upperTriangle(M, byrow=TRUE);
+    </code></pre>
+
+    <ul>
+        2. 正規化比較矩陣：將比較矩陣M的每列元素進行正規化處理，使每列元素之和為1，得到正規化比較矩陣MP。
+    </ul>
+    <pre><code>
+        # 對M的每一列進行加總，結果存儲在向量V中
+        V<-c(0,0,0);
+        V<-colSums(M);
+
+        # 將向量V的每個元素除以相應的列加總，得到正規化化的配對比較矩陣（normalized pairwise comparison matrix）
+        MP<-matrix(0,3,3);
+        MP[,1]<-M[,1]/V[1];
+        MP[,2]<-M[,2]/V[2];
+        MP[,3]<-M[,3]/V[3];
+    </code></pre>
+    <ul>
+        3. 計算相對優先級：通過計算正規化比較矩陣MP的行均值，得到每個元素的相對優先級CWV。
+    </ul>
+    <pre><code>
+        # 對MP的每一行計算平均值，得到相對優先級向量CWV
+        CWV<-c(0,0,0);
+        CWV<-rowMeans(MP);
+    </code></pre>
+
+    <ul>
+        4. 使用幾何平均：將正規化比較矩陣MP中每行元素的幾何平均值計算得到新的相對優先級CWV2。
+    </ul>
+    <pre><code>
+        # 使用幾何平均方法計算CWV2向量
+        CWV2<-c(0,0,0);
+        CWV2[1]<-(MP[1,1]*MP[1,2]*MP[1,3])^(1/3);
+        CWV2[2]<-(MP[2,1]*MP[2,2]*MP[2,3])^(1/3);
+        CWV2[3]<-(MP[3,1]*MP[3,2]*MP[3,3])^(1/3);
+    </code></pre>
+    <ul>
+        5. 一致性分析：通過一致性檢定，檢查決策者對於比較矩陣的判斷是否具有一致性。一致性指標包括一致性指數（CI）和一致性比率（CR）。如果CR值小於0.1，表示判斷具有一致性，否則表示判斷缺乏一致性。<br>
+        如果一致性程度可接受，則可以繼續進行決策過程。<br>
+        如果一致性程度不可接受，則DM應重新考慮並可能修正配對比較判斷，然後再進行分析。
+    </ul>
+    <pre><code>
+    # 將每一行的值相加，得到一個標記為“加權和”的向量。'%*%' 是矩陣乘法
+    V <- M %*% CWV;
+
+    # 將得到的加權和向量中的元素除以相應的優先級值。
+    X<- V/CWV;
+
+    # 計算得到的值的平均值，用Lambda_max表示。
+    Lambda_Max <- mean(X);
+
+    # 計算一致性指標（CI）
+    CI <- (Lambda_Max-3)/(3-1);
+
+    # 計算一致性比例（CR）
+    CR <- CI/0.58;
+
+    # 根據CR判斷是否接受一致性檢測
+    if (CR > 0.1)
+    {
+      print("沒通過一致性檢定");
+    }
+    else
+    {
+      print("通過一致性檢定");
+    }
+    </code></pre>
+
+    <h2>層次分析法（Analytic Hierarchy Process, AHP）</h2>
+    層次分析法用於解決具有多個層次和多準則的決策問題<br>
+    這裡以選定蓋機場的地點為例，用R代碼實作AHP，我們考量的變數有：市場吸引力、可達性、成本、文化吸引力。
+    <p>
+        <ul>
+        1. MAR (Market Attractiveness Rating)
+        這部分代碼用於計算市場吸引力的評分。首先，建立一個大小為7x7的對角矩陣M，然後對矩陣中的一些元素進行設置，表示不同因素之間的相對重要性（比例對比）。接著將矩陣進行正規化，使每列的和為1，得到正規化後的矩陣MP。再計算MP的行平均值，得到市場吸引力的相對優先性向量CWV。
+    <pre><code>
+        ## Airport Accessibility
+        library(gdata)
+        #MAR
+        M <- diag(7);
+        M[1,2]<-1/7;
+        M[1,3]<-1/3;
+        M[1,4]<-1/3;
+        M[1,5]<-1;
+        M[1,6]<-1/7;
+        M[1,7]<-1/2;
+        M[2,3]<-5;
+        M[2,4]<-5;
+        M[2,5]<-5;
+        M[2,6]<-3;
+        M[2,7]<-5;
+        M[3,4]<-2;
+        M[3,5]<-2;
+        M[3,6]<-1/5;
+        M[3,7]<-3;
+        M[4,5]<-3;
+        M[4,6]<-1/5;
+        M[4,7]<-1;
+        M[5,6]<-1/5;
+        M[5,7]<-2;
+        M[6,7]<-5;
+        lowerTriangle(M) <- 1/upperTriangle(M, byrow=TRUE);
+
+        # Sum the columns
+        V<-c(0,0,0,0,0);
+        V<-colSums(M);
+
+        # Divide the sum of the columns back to M
+        MP<-matrix(0,7,7);
+        MP[,1]<-M[,1]/V[1];
+        MP[,2]<-M[,2]/V[2];
+        MP[,3]<-M[,3]/V[3];
+        MP[,4]<-M[,4]/V[4];
+        MP[,5]<-M[,5]/V[5];
+        MP[,6]<-M[,6]/V[6];
+        MP[,7]<-M[,7]/V[7];
+
+        # Compute the average of rows, to obtain the CWV
+        CWV<-c(0,0,0,0,0,0,0);
+        CWV<-rowMeans(MP);
+    </code></pre>
+        </ul>
+    <ul>
+        2. ACC (Airport Accessibility)
+        這部分代碼用於計算機場可達性的評分，過程類似於MAR部分。首先建立一個大小為7x7的對角矩陣M，然後對矩陣中的一些元素進行設置，表示不同因素之間的相對重要性（比例對比）。接著將矩陣進行正規化，得到正規化後的矩陣MP。再計算MP的行平均值，得到機場可達性的相對優先性向量CWV1。
+        <pre><code>
+        library(gdata)
+        #ACC
+        M <- diag(7);
+        M[1, 2]<-3
+        M[1, 3]<-0.33
+        M[1, 4]<-0.2
+        M[1, 5]<-0.2
+        M[1, 6]<-3
+        M[1, 7]<-2
+        M[2, 3]<-0.2
+        M[2, 4]<-0.2
+        M[2, 5]<-0.2
+        M[2, 6]<-0.5
+        M[2, 7]<-0.33
+        M[3, 4]<-2
+        M[3, 5]<-2
+        M[3, 6]<-5
+        M[3, 7]<-3
+        M[4, 5]<-0.5
+        M[4, 6]<-5
+        M[4, 7]<-3
+        M[5, 6]<-5
+        M[5, 7]<-3
+        M[6, 7]<-0.33
+        lowerTriangle(M) <- 1/upperTriangle(M, byrow=TRUE);
+
+        #ACC
+        # Sum the columns
+        V<-c(0,0,0,0,0,0,0);
+        V<-colSums(M);
+
+        # Divide the sum of the columns back to M
+        MP<-matrix(0,7,7);
+        MP[,1]<-M[,1]/V[1];
+        MP[,2]<-M[,2]/V[2];
+        MP[,3]<-M[,3]/V[3];
+        MP[,4]<-M[,4]/V[4];
+        MP[,5]<-M[,5]/V[5];
+        MP[,6]<-M[,6]/V[6];
+        MP[,7]<-M[,7]/V[7];
+
+        # Compute the average of rows, to obtain the CWV
+        CWV1<-c(0,0,0,0,0,0,0);
+        CWV1<-rowMeans(MP);
+        </code></pre>
+    </ul>
+    <ul>
+        3. COS (Cost of Stay)
+        這部分代碼用於計算停留成本的評分，過程類似於前兩部分。首先建立一個大小為7x7的對角矩陣COS，然後對矩陣中的一些元素進行設置，表示不同因素之間的相對重要性（比例對比）。接著將矩陣進行正規化，得到正規化後的矩陣CosMP。再計算CosMP的行平均值，得到停留成本的相對優先性向量CosCWV2。
+        <pre><code>
+            #COS
+            COS <- diag(7)
+            COS[1,2]=1/6
+            COS[1,3]=1/7
+            COS[1,4]=5
+            COS[1,5]=1/7
+            COS[1,6]=1/9
+            COS[1,7]=7
+            COS[2,3]=1/3
+            COS[2,4]=7
+            COS[2,5]=3
+            COS[2,6]=1/3
+            COS[2,7]=7
+            COS[3,4]=7
+            COS[3,5]=5
+            COS[3,6]=1/2
+            COS[3,7]=8
+            COS[4,5]=1/8
+            COS[4,6]=1/6
+            COS[4,7]=3
+            COS[5,6]=1/5
+            COS[5,7]=9
+            COS[6,7]=7
+            lowerTriangle(COS) <- 1/upperTriangle(COS,byrow = T)
+
+            #cwv
+            CosV <- c(0,0,0)
+            CosV <- colSums(COS)
+
+            CosMP <- matrix(0,7,7)
+            for(i in c(0:7))
+            {
+              CosMP[,i] <- COS[,i]/CosV[i]
+            }
+
+            CosCWV2 <- c(0,0,0)
+            CosCWV2<- rowMeans(CosMP)
+        </code></pre>
+    </ul>
+    <ul>4. CAP (Cultural Attractions Points)
+        這部分代碼用於計算文化吸引力的評分，過程類似於前面幾部分。首先建立一個大小為7x7的對角矩陣M，然後對矩陣中的一些元素進行設置，表示不同因素之間的相對重要性（比例對比）。接著將矩陣進行正規化，得到正規化後的矩陣MP。再計算MP的行平均值，得到文化吸引力的相對優先性向量CWV3。
+        <pre><code>
+        #CAP
+        M <- diag(7);
+        M[1,2] = 1/2
+        M[1,3] = 2
+        M[1,4] = 2
+        M[1,5] = 1/3
+        M[1,6] = 5
+        M[1,7] = 1/5
+        M[2,3] = 3
+        M[2,4] = 2
+        M[2,5] = 1/3
+        M[2,6] = 5
+        M[2,7] = 4
+        M[3,4] = 2
+        M[3,5] = 1/5
+        M[3,6] = 5
+        M[3,7] = 1/7
+        M[4,5] = 1/3
+        M[4,6] = 5
+        M[4,7] = 5
+        M[5,6] = 5
+        M[5,7] = 1/3
+        M[6,7] = 1/9
+
+        lowerTriangle(M) <- 1/upperTriangle(M, byrow=TRUE);
+
+        # Sum the columns
+        V<-colSums(M);
+
+        # Divide the sum of the columns back to M
+        MP<-matrix(0,7,7);
+        MP[,1]<-M[,1]/V[1];
+        MP[,2]<-M[,2]/V[2];
+        MP[,3]<-M[,3]/V[3];
+        MP[,4]<-M[,4]/V[4];
+        MP[,5]<-M[,5]/V[5];
+        MP[,6]<-M[,6]/V[6];
+        MP[,7]<-M[,7]/V[7];
+
+        # Compute the average of rows, to obtain the CWV
+        CWV3<-c(0, 0, 0, 0, 0, 0, 0);
+        CWV3<-rowMeans(MP);
+
+        S<- diag(4);
+        S[1,2] = 4
+        S[1,3] = 1/2
+        S[1,4] = 2
+        S[2,1] = 1/4
+        S[2,3] = 1/4
+        S[2,4] = 1/4
+        S[3,4] = 4
+        lowerTriangle(S) <- 1/upperTriangle(S, byrow=TRUE);
+
+        # Sum the columns
+        V<-c(0,0,0,0);
+        V<-colSums(S);
+
+        # Divide the sum of the columns back to M
+        SP<-matrix(0,4,4);
+        SP[,1]<-S[,1]/V[1];
+        SP[,2]<-S[,2]/V[2];
+        SP[,3]<-S[,3]/V[3];
+        SP[,4]<-S[,4]/V[4];
+
+        # Compute the average of rows, to obtain the CWV
+        CWV4<-c(0, 0, 0, 0);
+        CWV4<-rowMeans(SP);
+        </code></pre>
+    </ul>
+
+    <ul>5. 最後，將四個向量合併為一個矩陣X，並使用層次分析法（AHP）的方法來對這些評分進行綜合分析，得出最終的排序結果SI。SI是一個向量，其負值表示最終排序的結果，即越小的值表示該項目的優先性越高。最後使用rank函數對SI進行排序，以獲得最終的排序結果。
+        <pre><code>
+        X=rbind(CWV,CWV1,CosCWV2,CWV3)
+        colnames(X)=c('A1','A2','A3','A4','A5','A6','A7')
+
+        SI = t(X)%*%CWV4
+
+        rank(-SI)
+        </code></pre>
+    </ul>
+    </p>
+
+
+
+</div>
+<div style="text-align: right;"><h2><a href="https://ch.sherry-liu.com/">前往首頁</a></h2></div>
+</body>
+</html>

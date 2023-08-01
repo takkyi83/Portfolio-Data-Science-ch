@@ -23,24 +23,35 @@
         <li><h3>
             <a href="https://internetnz.nz/news-and-articles/covid-19-new-zealand-and-nz-a-view-of-domain-registration-changes/"><strong>.nz 國家域名在Covid-19期間的變化</strong></a>
         </h3>
-            藉由.nz國家域名在Covid-19期間的變化，一窺人們心裡還有行為上的變化，
+            藉由.nz國家域名在Covid-19期間的變化，一窺人們心裡還有行為上的變化，<br>
+            <img src="python.png", width="2%">
         </li>
         <li><h3>
             <a href="ChineseMed.html"><strong>本草綱目解密：古籍文本探勘、藥材資料庫建置與視覺化探索分析研究</strong>
             </a>
         </h3>
-            建立中藥關聯資料庫讓無結構的古籍文本化為方便分析的結構化資料，並以演算法和機器學習的角度來探討本草綱目藥材、病症、處方之間的關聯和群集關係。最後以Tableau視覺化呈現。
+            建立中藥關聯資料庫讓無結構的古籍文本化為方便分析的結構化資料，並以演算法和機器學習的角度來探討本草綱目藥材、病症、處方之間的關聯和群集關係。最後以Tableau視覺化呈現。<br>
+             <img src="python.png", width="2%"> <img src="sql.png", width="2%"> <img src="tableau.png", width="4%">
         </li>
         <li><h3>
             <a href="deepfm.html"><strong>以DeepFM深度學習來預測數位廣告的點擊率</strong>
             </a>
         </h3>
-            數位廣告的點擊率是廣告和使用者參與程度的重要指標。這裡使用DeepFM來預測點擊率。DeepFM模型的核心思想是同時利用因子分解機和深度神經網絡進行特徵表徵和特徵交互的學習，從而更好地捕捉特徵之間的非線性關係。
+            數位廣告的點擊率是廣告和使用者參與程度的重要指標。這裡使用DeepFM來預測點擊率。DeepFM模型的核心思想是同時利用因子分解機和深度神經網絡進行特徵表徵和特徵交互的學習，從而更好地捕捉特徵之間的非線性關係。<br>
+            <img src="python.png", width="2%">
+        </li>
+        <li>
+            <a href="mcdm.html"><h3>多準則決策（Multi-criteria decision-making, MCDM）</h3></a>
+            多準則決策是指在具有相互衝突、不可共度的有限(無限)方案集中進行選擇的決策。它是分析決策理論的重要內容之一。這裡用R語言來實作一個買車情境下的多準則決策。<br>
+            <img src="r.png", width="2%">
         </li>
     </ul>
 
         <h2>相關技能</h2>
         <canvas id="skillBarChart" style="width:100%;max-width:700px"></canvas>
+
+<!--        <h2>相關工具</h2>-->
+<!--        <canvas id="toolsBarChart" style="width:100%;max-width:700px"></canvas>-->
 
         <h2>聯絡</h2>
         <p>
@@ -95,6 +106,60 @@
                 title: {
                     display: false,
                     text: "Relevant Skills",
+                    fontSize: 40
+                }
+            }
+        }
+    });
+
+    // Data for the "tools" chart
+    var toolsXValues = ["Python", "SQL", "R", "Tableau", "PowerBI"];
+    var toolsYValues = [80, 90, 60, 75, 60];
+    var toolsBarColors = Array(toolsXValues.length).fill("green");
+
+    // Sort the toolsXValues and toolsYValues based on toolsYValues in descending order
+    var sortedToolsData = toolsYValues.map((value, index) => ({ x: toolsXValues[index], y: value }));
+    sortedToolsData.sort((a, b) => b.y - a.y);
+    toolsXValues = sortedToolsData.map(item => item.x);
+    toolsYValues = sortedToolsData.map(item => item.y);
+
+    // Create the "tools" chart
+    new Chart("toolsBarChart", {
+        type: "bar",
+        data: {
+            labels: toolsXValues,
+            datasets: [{
+                backgroundColor: toolsBarColors,
+                data: toolsYValues,
+                barThickness: 12
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    min: 0,
+                    max: 100,
+                    ticks: {
+                        stepSize: 10,
+                        font: {
+                            size: 17
+                        }
+                    }
+                },
+                x: {
+                    ticks: {
+                        font: {
+                            size: 14
+                        }
+                    }
+                }
+            },
+            plugins: {
+                title: {
+                    display: false,
+                    text: "Tools",
                     fontSize: 40
                 }
             }

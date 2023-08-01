@@ -16,7 +16,7 @@ body {
     max-width: 100%;
     height: auto;
     flex-shrink: 0;
-    margin-bottom: 20px; /* Add a margin at the bottom to create space for the text */
+    margin-bottom: 0px; /* Add a margin at the bottom to create space for the text */
 }
 
 .content {
@@ -42,7 +42,7 @@ th, td {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 50vh; /* Change height to min-height to allow for content expansion */
+    min-height: 20vh;
 }
 
 .centered-image {
